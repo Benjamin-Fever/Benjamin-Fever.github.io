@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const username = 'Benjamin-Fever';
     const repoContainer = document.getElementById('repos');
-    const token = '';
+    const token = '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';
 
     // Function to fetch repositories
     const fetchRepos = async () => {
