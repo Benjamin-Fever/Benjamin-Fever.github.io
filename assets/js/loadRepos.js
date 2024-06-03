@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to fetch repositories
     const fetchRepos = async () => {
+        console.log(token);
         try {
             const response = await fetch(`https://api.github.com/users/${username}/repos`, {
                 headers: { 'Authorization': `token ${token}` }
