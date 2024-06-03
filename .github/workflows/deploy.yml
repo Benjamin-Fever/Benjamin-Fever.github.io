@@ -6,30 +6,18 @@ on:
       - main  # Change to your default branch
 
 jobs:
-  build_and_deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'  # Specify the Node.js version you need
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Build project
-      run: npm run build  # Change this to your build command if necessary
-
     - name: Replace token placeholder
-      run: |
-        sed -i 's/YOUR_GITHUB_TOKEN/${{ secrets.GH_TOKEN }}/' assets\js\loadRepos.js
+      run: sed -i 's/YOUR_GITHUB_TOKEN/${{ secrets.GH_TOKEN }}/' path/to/your/script.js
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./public  # Change this to your build output directory
+        publish_dir: ./  # Directory to publish (root directory if no build process)
