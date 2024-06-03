@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const username = 'Benjamin-Fever';
     const repoContainer = document.getElementById('repos');
     const token = 'API_KEY_PLACEHOLDER';
-
+    console.log(token);
     // Function to fetch repositories
     const fetchRepos = async () => {
         const response = await fetch(`https://api.github.com/users/${username}/repos`, {
