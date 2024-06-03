@@ -1,13 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
     const username = 'Benjamin-Fever';
     const repoContainer = document.getElementById('repos');
-    const token = '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';
 
     // Function to fetch repositories
     const fetchRepos = async () => {
-        const response = await fetch(`https://api.github.com/users/${username}/repos`, {
-            headers: { 'Authorization': `token ${token}` }
-        });
+        const response = await fetch(`https://api.github.com/users/${username}/repos`);
         const repos = await response.json();
 
         repos.sort((a,b) => new Date(b.created_at) - new Date(a.created_at));
@@ -20,8 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const fetchThumnail = async (repo) => {
         response = await fetch(`https://api.github.com/repos/${username}/${repo.name}/contents/.github/portfolio-card.json`, {
             headers: { 
-                'Accept': 'application/vnd.github.v3.raw',
-                'Authorization': `token ${token}`
+                'Accept': 'application/vnd.github.v3.raw'
             }
         });
         const thumbnail = await response.json();
