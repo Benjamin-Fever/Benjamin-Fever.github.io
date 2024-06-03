@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const username = 'Benjamin-Fever';
     const repoContainer = document.getElementById('repos');
-    const token = 'YOUR_GITHUB_TOKEN'; // Placeholder for the token
+    const token = 'YOUR_GITHUB_TOKEN'; // Placeholder for the token 
 
     // Function to fetch repositories
     const fetchRepos = async () => {
