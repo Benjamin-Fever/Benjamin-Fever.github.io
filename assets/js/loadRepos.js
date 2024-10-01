@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     var response = await fetch("https://vw6zd6gcme.execute-api.us-east-1.amazonaws.com/prod/data");
     var data = await response.json();
     if (response.ok) {
+        repoContainer.innerHTML = "";
         data.forEach(async repo => {
             repoContainer.innerHTML += `
             <div class="col-md-4">
